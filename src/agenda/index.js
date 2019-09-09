@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, Dimensions, Animated, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import XDate from 'xdate';
-import momentTimezone from 'moment-timezone';
 
 import { parseDate, xdateToData } from '../interface';
 import dateutils from '../dateutils';
@@ -106,6 +105,7 @@ export default class AgendaView extends Component {
       topDay: parseDate(this.props.selected) || XDate(true)
     };
 
+    this.currentMonth = this.state.selectedDay.clone();
     this.onLayout = this.onLayout.bind(this);
     this.onScrollPadLayout = this.onScrollPadLayout.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
@@ -449,9 +449,7 @@ export default class AgendaView extends Component {
               ref={c => (this.calendar = c)}
               minDate={this.props.minDate}
               maxDate={this.props.maxDate}
-              current={momentTimezone()
-                .tz('Asia/Tokyo')
-                .format('YYYY-MM-DD')}
+              current={this.currentMonth}
               markedDates={this.generateMarkings()}
               markingType={this.props.markingType}
               removeClippedSubviews={this.props.removeClippedSubviews}
