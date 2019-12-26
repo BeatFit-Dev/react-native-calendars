@@ -157,6 +157,7 @@ export default class ExpandableCalendarScreen extends Component {
         theme={{todayButtonTextColor: '#0059ff'}} 
         showTodayButton 
         disabledOpacity={0.6}
+        // todayBottomMargin={16}
       >
         <ExpandableCalendar 
           // horizontal={false}
@@ -171,6 +172,7 @@ export default class ExpandableCalendarScreen extends Component {
           rightArrowImageSource={require('../img/next.png')}
           // calendarStyle={styles.calendar}
           // headerStyle={styles.calendar} // for horizontal only
+          // disableWeekScroll
         />
         <AgendaList
           sections={ITEMS}

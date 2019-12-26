@@ -24,8 +24,8 @@
 
 ## [1.192.0] - 2019-06-25
 ### Fix
-- CalendarProvider - Fix for warning on Image 'source' type.
-- ExpandableCalendar - Fix shadow/elevation style.
+- CalendarProvider - fix for warning on Image 'source' type.
+- ExpandableCalendar - fix shadow/elevation style.
 
 ## [1.193.0] - 2019-06-26
 ### Bug Fix
@@ -74,3 +74,50 @@
 ## [1.203.0] - 2019-07-31
 ### Fix
 - ExpandableCalendar - fix for vertical open height.
+
+## [1.204.0] - 2019-08-6
+### Fix
+- CalendarProvider - adding 'buttonTopPosition' prop to control the button's y position.
+
+## [1.205.0] - 2019-08-15
+### Fix
+- Week - fix for style - removing width to allow flex.
+
+## [1.206.0] - 2019-08-15
+### Fix
+- CalendarProvider - fix header in vertical mode when initial position is 'open'.
+
+## [1.207.0] - 2019-08-15
+### Added
+- CalendarProvider - 'todayButtonStyle' prop to allow passing style to the today button.
+
+## [1.208.0] - 2019-08-15
+### Added
+- CalendarProvider - today button size for tablet. 
+  Passing style prop to a container View.
+- ExpandableCalendar - adjusting vertical mode open height for tablet in both orientations.
+
+## [1.209.0] - 2019-08-20
+### Fix
+- CalendarProvider - fix for children wrapper view.
+
+## [1.213.0] - 2019-11-13
+### Changed
+- Upgrading react-native to version 61.4.0.
+
+## [1.214.0] - 2019-12-12
+### Fix
+- Agenda - fix typo on 'scrollEnable' prop.
+- ExpandableCalendar - fix passed props to CalendarList.
+
+## [1.215.0] - 2019-12-23
+### Added
+- ExpandableCalendar - adding week scroll to closed position.
+
+## [1.216.0] - 2019-12-24
+### Fix
+- Week - moving width style to style file.
+
+## [1.217.0] - 2019-12-24
+### Fix
+- Week - moving width style to WeekCalendar.
