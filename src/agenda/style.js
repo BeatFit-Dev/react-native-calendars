@@ -6,21 +6,17 @@ const STYLESHEET_ID = 'stylesheet.agenda.main';
 
 export default function styleConstructor(theme = {}) {
   const appStyle = {...defaultStyle, ...theme};
-  const { knob, weekdays } = platformStyles(appStyle);
+  const {knob, weekdays} = platformStyles(appStyle);
+
   return StyleSheet.create({
     knob,
     weekdays,
     header: {
       overflow: 'hidden',
       justifyContent: 'flex-end',
-      position:'absolute',
-      height:'100%',
-      width:'100%',
-    },
-    calendar: { // not in use
-      flex: 1,
-      borderBottomWidth: 1,
-      borderColor: appStyle.separatorColor
+      position: 'absolute',
+      height: '100%',
+      width: '100%'
     },
     knobContainer: {
       flex: 1,

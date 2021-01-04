@@ -3,7 +3,7 @@ import * as defaultStyle from '../../style';
 
 const STYLESHEET_ID = 'stylesheet.calendar.header';
 
-export default function(theme={}) {
+export default function (theme = {}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     header: {
@@ -13,6 +13,9 @@ export default function(theme={}) {
       paddingRight: 10,
       marginTop: 6,
       alignItems: 'center'
+    },
+    headerContainer: {
+      flexDirection: 'row'
     },
     monthText: {
       fontSize: appStyle.textMonthFontSize,
@@ -26,14 +29,16 @@ export default function(theme={}) {
       ...appStyle.arrowStyle
     },
     arrowImage: {
+      tintColor: appStyle.arrowColor,
       ...Platform.select({
-        ios: {
-          tintColor: appStyle.arrowColor
-        },
-        android: {
-          tintColor: appStyle.arrowColor
+        web: {
+          width: appStyle.arrowWidth,
+          height: appStyle.arrowHeight
         }
       })
+    },
+    disabledArrowImage: {
+      tintColor: appStyle.disabledArrowColor
     },
     week: {
       marginTop: 7,
@@ -49,6 +54,9 @@ export default function(theme={}) {
       fontFamily: appStyle.textDayHeaderFontFamily,
       fontWeight: appStyle.textDayHeaderFontWeight,
       color: appStyle.textSectionTitleColor
+    },
+    disabledDayHeader: {
+      color: appStyle.textSectionTitleDisabledColor
     },
     ...(theme[STYLESHEET_ID] || {})
   });
