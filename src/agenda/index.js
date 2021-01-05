@@ -48,8 +48,8 @@ export default class AgendaView extends Component {
     /** callback that gets called when day changes while scrolling agenda list */
     onDaychange: PropTypes.func, //TODO: Should be renamed 'onDayChange'
     /** specify how agenda knob should look like */
-    renderKnob: PropTypes.func, 
-    /** initially selected day */ 
+    renderKnob: PropTypes.func,
+    /** initially selected day */
     selected: PropTypes.any, //TODO: Should be renamed 'selectedDay'
     /** Hide knob button. Default = false */
     hideKnob: PropTypes.bool
@@ -79,7 +79,7 @@ export default class AgendaView extends Component {
     this.currentMonth = this.state.selectedDay.clone();
 
     this.knobTracker = new VelocityTracker();
-    this.state.scrollY.addListener(({ value }) => this.knobTracker.add(value));
+    this.state.scrollY.addListener(({value}) => this.knobTracker.add(value));
   }
 
   componentDidMount() {
@@ -117,9 +117,6 @@ export default class AgendaView extends Component {
   setScrollPadPosition = (y, animated) => {
     if (this.scrollPad.scrollTo) {
       this.scrollPad.scrollTo({x: 0, y, animated});
-    } else {
-      // Support for RN O.61 (Expo 37)
-      this.scrollPad.getNode().scrollTo({x: 0, y, animated});
     }
   };
 
@@ -220,13 +217,13 @@ export default class AgendaView extends Component {
   onTouchStart = () => {
     this.headerState = 'touched';
     if (this.knob) {
-      this.knob.setNativeProps({ style: { opacity: 0.5 } });
+      this.knob.setNativeProps({style: {opacity: 0.5}});
     }
   };
 
   onTouchEnd = () => {
     if (this.knob) {
-      this.knob.setNativeProps({ style: { opacity: 1 } });
+      this.knob.setNativeProps({style: {opacity: 1}});
     }
 
     if (this.headerState === 'touched') {
@@ -377,9 +374,9 @@ export default class AgendaView extends Component {
 
     if (!this.state.calendarIsReady) {
       // limit header height until everything is setup for calendar dragging
-      headerStyle.push({ height: 0 });
+      headerStyle.push({height: 0});
       // fill header with appStyle.calendarBackground background to reduce flickering
-      weekdaysStyle.push({ height: HEADER_HEIGHT });
+      weekdaysStyle.push({height: HEADER_HEIGHT});
     }
 
     const shouldAllowDragging = !hideKnob && !this.state.calendarScrollable;
